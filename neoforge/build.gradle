@@ -76,7 +76,7 @@ processResources {
 }
 
 dependencies {
-	minecraft gradlefiles.neoForgeDependency()
+	implementation gradlefiles.neoForgeDependency()
 }
 
 publishMods {

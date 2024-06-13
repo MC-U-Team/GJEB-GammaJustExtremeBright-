@@ -34,6 +34,8 @@ java {
 
 minecraft {
 	mappings channel: config.forge.mapping_channel, version: config.forge.mapping
+
+	reobf = false
 	
 	accessTransformer = file("src/main/resources/META-INF/accesstransformer.cfg")
 	
@@ -76,7 +78,7 @@ tasks.withType(Javadoc).configureEach { task ->
 	task.options.addStringOption("Xdoclint:none", "-quiet")
 }
 
-signjar.sign(tasks.named("reobfJar"))
+signjar.sign(tasks.named("jar"))
 
 processResources {
 	doLast {
