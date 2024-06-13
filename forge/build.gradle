@@ -34,7 +34,7 @@ java {
 
 minecraft {
 	mappings channel: config.forge.mapping_channel, version: config.forge.mapping
-
+	
 	reobf = false
 	
 	accessTransformer = file("src/main/resources/META-INF/accesstransformer.cfg")
@@ -90,7 +90,7 @@ processResources {
 
 dependencies {
 	minecraft gradlefiles.forgeDependency()
-		
+	
 	annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
