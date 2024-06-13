@@ -1,0 +1,14 @@
+{
+	"minVersion": "0.8",
+	"required": true,
+	"compatibilityLevel": "JAVA_17",
+	"plugin": "info.u_team.gjeb.mixin.GJEBMixinPlugin",
+	"package": "info.u_team.gjeb.mixin",
+	"mixins": [],
+	"client": [
+		"OptionsMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

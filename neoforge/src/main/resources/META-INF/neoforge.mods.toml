@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+issueTrackerURL="https://github.com/MC-U-Team/GJEB-GammaJustExtremeBright/issues"
+license="Apache-2.0 License"
+
+[[mods]]
+	modId="gjeb"
+	version="${file.jarVersion}"
+	displayName="GJEB (GammaJustExtremeBright)"
+	displayURL="https://u-team.info/mods/gjeb"
+	updateJSONURL="https://api.u-team.info/update/gjeb_neoforge.json"
+	logoFile="logo.png"
+	credits="Team U-Team"
+	authors="HyCraftHD"
+	description="Join our discord server here: https://discord.hycrafthd.net\n\nThis mod just let you customize your gamma ingame from 0% to 1000%."
+	
+	[[dependencies.gjeb]]
+	    modId="neoforge"
+	    type="required"
+	    versionRange="[47.0.35,)"
+	    ordering="NONE"
+	    side="BOTH"
+	
+	[[dependencies.gjeb]]
+	    modId="minecraft"
+	    mandatory=true
+	    versionRange="[1.20.1]"
+	    ordering="NONE"
+	    side="BOTH"
+	    
+[[mixins]]
+	config = "gjeb.mixins.json"
