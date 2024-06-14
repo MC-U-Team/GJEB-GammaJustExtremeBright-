@@ -71,6 +71,10 @@ mixin {
 
 tasks.withType(Jar).configureEach { task ->
 	gradlefiles.defaultJar(task)
+	
+	manifest {
+		attributes("MixinConfigs": "gjeb.mixins.json")
+	}
 }
 
 tasks.withType(Javadoc).configureEach { task ->
