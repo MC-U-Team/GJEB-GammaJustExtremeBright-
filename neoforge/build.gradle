@@ -47,11 +47,17 @@ runs {
 	client {
 		workingDirectory file("run/client").with { mkdirs(); it }
 		
+		jvmArguments "-Dmixin.debug.verbose=true"
+		jvmArguments "-Dmixin.debug.export=true"
+		
 		modSources sourceSets.main
 	}
 	
 	server {
 		workingDirectory file("run/server").with { mkdirs(); it }
+		
+		jvmArguments "-Dmixin.debug.verbose=true"
+		jvmArguments "-Dmixin.debug.export=true"
 		
 		modSources sourceSets.main
 	}
