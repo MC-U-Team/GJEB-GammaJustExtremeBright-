@@ -79,6 +79,12 @@ repositories {
 	maven {
 		url = "https://maven.terraformersmc.com"
 	}
+	maven {
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -92,6 +98,8 @@ dependencies {
 	modRuntimeOnly gradlefiles.fabricApiDependency()
 	
 	modRuntimeOnly "com.terraformersmc:modmenu:${config.modmenu.fabric.version}"
+	
+	modRuntimeOnly "maven.modrinth:sodium:mc1.21-0.5.9"
 }
 
 publishMods {
