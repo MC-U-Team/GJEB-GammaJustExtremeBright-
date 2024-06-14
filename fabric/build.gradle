@@ -118,6 +118,7 @@ publishMods {
 		javaVersions.add(JavaVersion.VERSION_21)
 		
 		optional("u-team-core")
+		optional("sodium")
 	}
 	
 	modrinth {
@@ -127,6 +128,7 @@ publishMods {
 		minecraftVersions.add(config.minecraft.version)
 		
 		optional("u-team-core")
+		optional("sodium")
 	}
 	
 	discord {
