@@ -99,6 +99,7 @@ publishMods {
 		projectSlug = config.curse.slug
 		minecraftVersions.add(config.minecraft.version)
 		javaVersions.add(JavaVersion.VERSION_21)
+		clientRequired = true
 		
 		optional("u-team-core")
 	}
