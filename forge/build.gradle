@@ -154,7 +154,11 @@ publishing {
 		mavenJava(MavenPublication) {
 			artifactId project.base.archivesName.get()
 			
-			from gradlefiles.filteredJavaComponent()
+			from gradlefiles.filteredJavaComponent {
+				filterDependency { holder ->
+					"jopt-simple" == holder.dependency.name
+				}
+			}
 			
 			pom {
 				pom.name = project.base.archivesName.get()

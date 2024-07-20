@@ -99,7 +99,7 @@ dependencies {
 	
 	modRuntimeOnly "com.terraformersmc:modmenu:${config.modmenu.fabric.version}"
 	
-	modRuntimeOnly "maven.modrinth:sodium:mc1.21-0.5.9"
+	modRuntimeOnly "maven.modrinth:sodium:mc1.21-0.5.11"
 }
 
 publishMods {
@@ -156,7 +156,14 @@ publishing {
 		mavenJava(MavenPublication) {
 			artifactId project.base.archivesName.get()
 			
-			from gradlefiles.filteredJavaComponent()
+			from gradlefiles.filteredJavaComponent {
+				filterDependency { holder ->
+					"sodium" == holder.dependency.name
+				}
+				filterDependency { holder ->
+					"modmenu" == holder.dependency.name
+				}
+			}
 			
 			pom {
 				pom.name = project.base.archivesName.get()
