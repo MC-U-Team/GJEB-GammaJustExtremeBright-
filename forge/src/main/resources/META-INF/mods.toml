@@ -17,7 +17,7 @@ license="Apache-2.0 License"
 	[[dependencies.gjeb]]
 	    modId="forge"
 	    mandatory=true
-	    versionRange="[51.0.4,)"
+	    versionRange="[51.0.26,)"
 	    ordering="NONE"
 	    side="BOTH"
 	
