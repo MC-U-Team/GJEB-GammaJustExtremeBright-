@@ -114,6 +114,8 @@ publishMods {
 		clientRequired = true
 		
 		optional("u-team-core")
+		optional("sodium")
+		optional("embeddium")
 	}
 	
 	modrinth {
@@ -123,6 +125,8 @@ publishMods {
 		minecraftVersions.add(config.minecraft.version)
 		
 		optional("u-team-core")
+		optional("sodium")
+		optional("embeddium")
 	}
 	
 	discord {
