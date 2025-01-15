@@ -81,8 +81,19 @@ processResources {
 	}
 }
 
+repositories {
+	maven {
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
+}
+
 dependencies {
 	implementation gradlefiles.neoForgeDependency()
+	
+	implementation "maven.modrinth:sodium:mc1.21.1-0.6.5-neoforge"
 }
 
 publishMods {

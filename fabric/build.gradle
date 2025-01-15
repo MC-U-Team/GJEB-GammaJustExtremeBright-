@@ -99,7 +99,7 @@ dependencies {
 	
 	modRuntimeOnly "com.terraformersmc:modmenu:${config.modmenu.fabric.version}"
 	
-	modRuntimeOnly "maven.modrinth:sodium:mc1.21-0.5.11"
+	modRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.5-fabric"
 }
 
 publishMods {
