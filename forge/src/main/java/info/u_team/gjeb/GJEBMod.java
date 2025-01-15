@@ -9,6 +9,7 @@ public class GJEBMod {
 	
 	public static final String MODID = GJEBReference.MODID;
 	
+	@SuppressWarnings("removal")
 	public GJEBMod() {
 		ModLoadingContext.get().registerExtensionPoint(DisplayTest.class, () -> new DisplayTest(() -> DisplayTest.IGNORESERVERONLY, (remoteVersion, network) -> true));
 	}
