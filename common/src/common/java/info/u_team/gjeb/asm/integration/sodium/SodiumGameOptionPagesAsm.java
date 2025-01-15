@@ -19,9 +19,9 @@ public class SodiumGameOptionPagesAsm {
 			for (final AbstractInsnNode ins : method.instructions) {
 				if (ins instanceof final MethodInsnNode methodIns) {
 					if (methodIns.getOpcode() == Opcodes.INVOKESTATIC && //
-							methodIns.owner.equals("me/jellysquid/mods/sodium/client/gui/options/control/ControlValueFormatter") && //
+							methodIns.owner.equals("net/caffeinemc/mods/sodium/client/gui/options/control/ControlValueFormatter") && //
 							methodIns.name.equals("brightness") && //
-							methodIns.desc.equals("()Lme/jellysquid/mods/sodium/client/gui/options/control/ControlValueFormatter;")) {
+							methodIns.desc.equals("()Lnet/caffeinemc/mods/sodium/client/gui/options/control/ControlValueFormatter;")) {
 						final AbstractInsnNode node = ins.getPrevious().getPrevious(); // Find IntInsNode with 100 value
 						
 						if (node instanceof final IntInsnNode intInsNode) {

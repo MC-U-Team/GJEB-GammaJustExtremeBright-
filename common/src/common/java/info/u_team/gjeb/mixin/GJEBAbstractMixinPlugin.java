@@ -11,7 +11,7 @@ import info.u_team.gjeb.asm.integration.sodium.SodiumGameOptionPagesAsm;
 
 public abstract class GJEBAbstractMixinPlugin implements IMixinConfigPlugin {
 	
-	public static final String SODIUM_CLASS = "me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages";
+	public static final String SODIUM_CLASS = "net.caffeinemc.mods.sodium.client.gui.SodiumGameOptionPages";
 	
 	@Override
 	public void onLoad(String mixinPackage) {
