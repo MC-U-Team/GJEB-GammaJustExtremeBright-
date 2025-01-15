@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Pseudo;
 import info.u_team.gjeb.mixin.GJEBAbstractMixinPlugin;
 
 @Pseudo
-@Mixin(targets = GJEBAbstractMixinPlugin.SODIUM_CLASS)
+@Mixin(targets = { GJEBAbstractMixinPlugin.SODIUM_CLASS, GJEBAbstractMixinPlugin.EMBEDDIUM_CLASS })
 abstract class SodiumGameOptionPagesMixin {
 	
 	@SuppressWarnings("unused")

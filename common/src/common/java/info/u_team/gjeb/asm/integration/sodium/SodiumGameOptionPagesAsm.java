@@ -14,14 +14,14 @@ public class SodiumGameOptionPagesAsm {
 	
 	private static Logger LOGGER = LogUtils.getLogger();
 	
+	private static final String SODIUM_CONTROLL_PACKAGE = "net/caffeinemc/mods/sodium/client/gui/options/control/";
+	private static final String EMBEDDIUM_CONTROLL_PACKAGE = "org/embeddedt/embeddium/api/options/control/";
+	
 	public static void asm(ClassNode targetClass) {
 		for (final MethodNode method : targetClass.methods) {
 			for (final AbstractInsnNode ins : method.instructions) {
 				if (ins instanceof final MethodInsnNode methodIns) {
-					if (methodIns.getOpcode() == Opcodes.INVOKESTATIC && //
-							methodIns.owner.equals("net/caffeinemc/mods/sodium/client/gui/options/control/ControlValueFormatter") && //
-							methodIns.name.equals("brightness") && //
-							methodIns.desc.equals("()Lnet/caffeinemc/mods/sodium/client/gui/options/control/ControlValueFormatter;")) {
+					if (isBrightnessCall(methodIns, SODIUM_CONTROLL_PACKAGE) || isBrightnessCall(methodIns, EMBEDDIUM_CONTROLL_PACKAGE)) {
 						final AbstractInsnNode node = ins.getPrevious().getPrevious(); // Find IntInsNode with 100 value
 						
 						if (node instanceof final IntInsnNode intInsNode) {
@@ -35,6 +35,13 @@ public class SodiumGameOptionPagesAsm {
 				}
 			}
 		}
+	}
+	
+	private static boolean isBrightnessCall(MethodInsnNode methodIns, String basePackage) {
+		return methodIns.getOpcode() == Opcodes.INVOKESTATIC && //
+				methodIns.owner.equals(basePackage + "ControlValueFormatter") && //
+				methodIns.name.equals("brightness") && //
+				methodIns.desc.equals("()L" + basePackage + "ControlValueFormatter;");
 	}
 	
 }

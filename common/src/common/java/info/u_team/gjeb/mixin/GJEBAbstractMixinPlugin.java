@@ -12,6 +12,7 @@ import info.u_team.gjeb.asm.integration.sodium.SodiumGameOptionPagesAsm;
 public abstract class GJEBAbstractMixinPlugin implements IMixinConfigPlugin {
 	
 	public static final String SODIUM_CLASS = "net.caffeinemc.mods.sodium.client.gui.SodiumGameOptionPages";
+	public static final String EMBEDDIUM_CLASS = "org.embeddedt.embeddium.impl.gui.EmbeddiumGameOptionPages";
 	
 	@Override
 	public void onLoad(String mixinPackage) {
@@ -41,7 +42,7 @@ public abstract class GJEBAbstractMixinPlugin implements IMixinConfigPlugin {
 	
 	@Override
 	public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
-		if (targetClassName.equals(SODIUM_CLASS)) {
+		if (targetClassName.equals(SODIUM_CLASS) || targetClassName.equals(EMBEDDIUM_CLASS)) {
 			SodiumGameOptionPagesAsm.asm(targetClass);
 		}
 	}
