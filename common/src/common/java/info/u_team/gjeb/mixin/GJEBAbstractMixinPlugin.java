@@ -33,7 +33,7 @@ public abstract class GJEBAbstractMixinPlugin implements IMixinConfigPlugin {
 	
 	@Override
 	public List<String> getMixins() {
-		if (modLoaded("sodium", "rubidium")) {
+		if (modLoaded("sodium", "rubidium", "embeddium")) {
 			return List.of("integration.sodium.SodiumGameOptionPagesMixin");
 		}
 		return null;
