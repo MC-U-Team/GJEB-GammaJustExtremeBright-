@@ -91,6 +91,12 @@ processResources {
 	}
 }
 
+repositories {
+	maven {
+		url = "https://maven.minecraftforge.net"
+	}
+}
+
 dependencies {
 	minecraft gradlefiles.forgeDependency()
 	
